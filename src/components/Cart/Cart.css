@@ -2,9 +2,26 @@
   padding: 50px 130px;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  gap: 20px;
 }
 .food-container {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   gap: 20px;
+}
+.summary-content {
+  background-color: #f59e0b;
+  border-radius: 4px;
+  padding-left: 20px;
+}
+.summary-content h2 {
+  text-align: center;
+}
+.summary {
+  position: sticky;
+  top: 0;
+}
+.summary p {
+  font-size: 20px;
+  font-weight: 600;
 }
