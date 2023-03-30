@@ -1,0 +1,17 @@
+.food-details {
+  border: 1px solid violet;
+  padding: 20px;
+  border-radius: 8px;
+}
+.food-content {
+  text-align: center;
+}
+.food-content p{
+    font-size: 24px;
+    font-weight: 600;
+}
+.food-details img {
+  width: 464px;
+  border-radius: 8px;
+  height: 464px;
+}
