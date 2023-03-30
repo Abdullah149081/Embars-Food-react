@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+
 import Food from "../Food/Food";
 import Summary from "../Summary/Summary";
 import "./Cart.css";
 
 const Cart = () => {
   const [foods, setFoods] = useState([]);
-  const [names, setNames] = useState([]);
+  const [carts, setCarts] = useState([]);
 
   const handlerBtn = (food) => {
-    const name = [...names, food];
-    setNames(name);
+    const exists = carts.find((cart) => cart.idMeal === food.idMeal);
+    if (exists) {
+      Swal.fire({
+        title: "Already exists !!!",
+        icon: "warning",
+        confirmButtonText: "Close",
+      });
+      return;
+    }
+
+    const newCart = [...carts, food];
+    setCarts(newCart);
   };
 
   useEffect(() => {
@@ -34,9 +46,9 @@ const Cart = () => {
         <div className="summary-content">
           <div className="summary">
             <h2>Cart summary</h2>
-            <p>Total order: {names.length}</p>
-            {names.map((name) => (
-              <Summary name={name}></Summary>
+            <p>Total order: {carts.length}</p>
+            {carts.map((cart) => (
+              <Summary cart={cart}></Summary>
             ))}
           </div>
         </div>

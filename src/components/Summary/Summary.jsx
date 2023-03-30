@@ -1,8 +1,8 @@
 import React from "react";
 import "./Summary.css";
 
-const Summary = ({ name }) => {
-  const { strMeal } = name;
+const Summary = ({ cart }) => {
+  const { strMeal } = cart;
 
   return (
     <div className="summary">
